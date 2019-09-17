@@ -1,0 +1,12 @@
+<!--pages/userConsole/userConsole.wxml-->
+<view class="container">
+  <view class="user">
+    <image class="image_user" src="{{userIcon}}"></image>
+    <text class="user_name">{{userName}}</text>
+  </view>
+  <!-- <image class="image_setting" src="../../image/login.png"></image> -->
+</view>
+
+<view hidden="{{authorized}}">
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">安全受权</button>
+</view>

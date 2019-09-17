@@ -1,0 +1,24 @@
+/* pages/todos/detail/detail.wxss */
+page{
+  background-color: #F6F6F6;
+}
+.contents {
+  /* border: 1rpx red solid; */
+}
+
+.contents input {
+  background-color: #fff;
+  margin: 10rpx 20rpx;
+  margin-bottom: 20rpx;
+  padding: 15rpx;
+  /* border: 1rpx blue solid; */
+  font-size: 30rpx;
+}
+
+.contents textarea {
+  /* height: 400rpx; */
+  background-color: #fff;
+  margin: 20rpx 20rpx;
+  padding: 15rpx;
+  /* border: 1rpx blue solid; */
+}

@@ -1,0 +1,7 @@
+/* pages/todolist/delivery/index.wxss */
+@import "../../style/guide.wxss";
+
+.guide {
+  margin: 5px 0;
+  background-color: #fff;
+}

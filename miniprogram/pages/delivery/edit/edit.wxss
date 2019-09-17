@@ -1,0 +1,7 @@
+/* pages/todolist/delivery/index.wxss */
+
+@import "../../../style/guide.wxss";
+input{
+  background-color: lightblue;
+  border-radius: 5px;
+}

@@ -1,0 +1,15 @@
+<!--pages/todos/todos_tpl/todos_tpl.wxml-->
+<template name="msgItem">  
+  <view class="list">
+    <view class="title">
+      <text>{{customer}}</text>
+    </view>
+    <view class="contents">
+      <text>{{contents}}</text>
+    </view>
+    <view class="info">
+      <text class="handler">{{status}}：{{handler}}</text>
+      <text class="date">{{createDate}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,5 @@
+/* pages/todos/add/add.wxss */
+
+input {
+  margin: 10rpx;
+}

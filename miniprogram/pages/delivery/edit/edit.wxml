@@ -1,0 +1,31 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="container">
+    <input hidden="true" type="date" name="_id" value="{{list._id}}"></input>
+    <view class='guide'>
+      <input type="text" name="title" value="{{list.title}}"></input>
+      <text class="p">建立日期:</text>
+      <input type="date" name="beaign" value="{{list.beaign}}"></input>
+      <text class="p">合同：</text>
+      <input type="text" name="contract" value="{{list.contract}}"></input>
+      <text class="p">发票：</text>
+      <input type="text" name="voucher" value="{{list.voucher}}"></input>
+      <text class="p">状态：</text>
+      <input type="text" name="state" value="{{list.state}}"></input>
+    </view>
+    <view class="guide">
+      <text class="headline">备注信息</text>
+      <text class="p">注册手机：</text>
+      <input type="text" name="tel" value="{{list.tel}}"></input>
+      <text class="p">序列号:</text>
+      <input type="text" name="serial" value="{{list.serial}}"></input>
+      <text class="p">CD-KEY:</text>
+      <input type="text" name="cdkey" value="{{list.cdkey}}"></input>
+    </view>
+    <view class="guide">
+      <div class="nav">
+        <button class="prev" size="mini" type="default" catchtap="onTapToRemove" data-remove-id="{{list._id}}">删除</button>
+        <button class="next" size="mini" type="default" form-type="submit">保存</button>
+      </div>
+    </view>
+  </view>
+</form>

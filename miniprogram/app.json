@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/todos/index",
+    "pages/index/index",
+    "pages/test",
+    "pages/todos/detail/detail",
+    "pages/todos/add/add",
+    "pages/delivery/index",
+    "pages/userConsole/userConsole",
+    "pages/delivery/detail/detail",
+    "pages/delivery/edit/edit",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/todos/index",
+        "text": "待办",
+        "iconPath": "image/login.png",
+        "selectedIconPath": "image/login_HL.png"
+      },
+      {
+        "pagePath": "pages/delivery/index",
+        "text": "进度",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "我",
+        "iconPath": "image/login.png",
+        "selectedIconPath": "image/login_HL.png"
+      },
+      {
+        "pagePath": "pages/userConsole/userConsole",
+        "text": "我",
+        "iconPath": "image/login.png",
+        "selectedIconPath": "image/login_HL.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

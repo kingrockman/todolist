@@ -1,0 +1,40 @@
+<!-- pages/todolist/delivery/index.wxml -->
+<view class='container'>
+  <view class='guide header'>
+    <text class="headline">{{detail.title}}</text>
+    <text class="p">建立日期:{{detail.beaign}}</text>
+    <text class="p">合同：{{detail.contract}}</text>
+    <text class="p">发票：{{detail.voucher}}</text>
+    <text class="p">状态：{{detail.state}}</text>
+  </view>
+  <view class='guide body'>
+    <text class="headline">项目进度：日常工作内容（主体非明细）</text>
+    <block wx:for="{{detail.body}}" wx:key="*this">
+      <view class="contents">
+        <text class="p">{{item.content}}</text>
+        <view>
+          <text class="p">{{item.creater}}</text>
+          <text class="p">{{item.date}}</text>
+        </view>
+      </view>
+    </block>
+    <form  bindsubmit="formSubmit" class="newcontents">
+    <input name="content" value="{{input}}"></input>
+    <input hidden="true" name="index" value="{{detail.body.length}}"></input>
+    
+    <button  form-type="submit">添加进度</button>
+    </form>
+  </view>
+  <view class="guide footer">
+    <text class="headline">备注信息</text>
+    <text class="p">注册手机：{{detail.tel}}</text>
+    <text class="p">序列号:{{detail.serial}}</text>
+    <text class="p">CD-KEY:{{detail.cdkey}}</text>
+  </view>
+  <view class="guide tools">
+    <div class="nav">
+      <button class="prev" size="mini" type="default" catchtap="navToList" data-post-id="{{detail._id}}">返回清单</button>
+      <button class="next" size="mini" type="default" catchtap="navToEdit" data-post-id="{{detail._id}}">修改</button>
+    </div>
+  </view>
+</view>

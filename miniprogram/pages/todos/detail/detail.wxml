@@ -1,0 +1,21 @@
+<!--pages/todos/detail/detail.wxml-->
+<form class="container" bindsubmit="formSubmit">
+  <view class="contents">
+    <input name="_id" hidden="true" value="{{todos._id}}"></input>
+    <input name="customer" disabled="{{type}}" value="{{todos.customer}}" placeholder="客户名称"></input>
+    <input name="contents" disabled="{{type}}" value="{{todos.contents}}" placeholder="问题描述"></input>
+    <input name="creater" hidden="true" value="{{todos.creater}}" placeholder="创建人"></input>
+    <input name="createDate" hidden="true" value="{{todos.createDate}}" placeholder="创建日期"></input>
+    <input name="status" disabled="{{type}}" value="{{todos.status}}" placeholder="状态"></input>
+    <input name="handler" disabled="{{type}}" value="{{todos.handler}}" placeholder="处理人"></input>
+    <textarea auto-height name="detail" disabled="{{type}}" value="{{todos.detail}}" placeholder="工作内容"></textarea>
+  </view>
+  <view hidden="{{!type}}">
+    <button catchtap="toggle">修改</button>
+    <button catchtap="onAccept">接受</button>
+  </view>
+  <view hidden="{{type}}">
+    <button catchtap="toggle">取消</button>
+    <button form-type="submit">保存</button>
+  </view>
+</form>

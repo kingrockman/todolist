@@ -1,0 +1,25 @@
+<!-- pages/todolist/index.wxml -->
+
+<import src="todos_tpl/todos_tpl.wxml" />
+
+<view>
+  <button catchtap="onTapToAdd">添加</button>
+</view>
+<view class="nav_wrap">
+  <scroll-view class="nav" scroll-x>
+    <view class="nav_items">未完成</view>
+    <view class="nav_items">浩</view>
+    <view class="nav_items">峰</view>
+    <view class="nav_items">全部</view>
+    <view class="nav_items">全部</view>
+    <view class="nav_items">全部</view>
+    <view class="nav_items">全部</view>
+    <view class="nav_items">全部</view>
+    <view class="nav_items">全部</view>
+  </scroll-view>
+</view>
+<block wx:for="{{todos}}" wx:key="index">
+  <view catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}">
+    <template is="msgItem" data="{{...item}}" />
+  </view>
+</block>

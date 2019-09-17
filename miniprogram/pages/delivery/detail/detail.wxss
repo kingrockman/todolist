@@ -1,0 +1,8 @@
+/* pages/todolist/delivery/detail/detail.wxss */
+
+@import "../../../style/guide.wxss";
+.newcontents{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  width: 100%;
+}

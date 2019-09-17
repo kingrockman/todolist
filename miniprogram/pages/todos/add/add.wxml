@@ -1,0 +1,12 @@
+<!--pages/todos/add/add.wxml-->
+<form  bindsubmit="formSubmit">
+  <input name="customer" placeholder="请输入客户"></input>
+  <textarea name="contents" placeholder="请输入服务请求"></textarea>
+  <input name="status" hidden="true" placeholder="请输入状态"></input>
+  <input name="handler" hidden="true" placeholder="请输入处理人"></input>
+  <input name="detail" hidden="true" placeholder="请输入工作祥情"></input>
+  <input name="createDate" hidden="true" placeholder="请输入创建日期"></input>
+  <input name="creater" hidden="true" placeholder="请输入创建人"></input>
+
+  <button form-type="submit">保存</button>
+</form>

@@ -1,0 +1,31 @@
+/* pages/userConsole/userConsole.wxss */
+page{
+  background-color: #F6F6F6;
+}
+.container{
+  background-color: #fff;
+
+  border-bottom: 1rpx solid #f5f5f5;
+
+}
+
+.user{
+  margin: 15rpx;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+.user_name{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: 60%;
+  font-size: 32rpx;
+}
+.image_user{
+  width:140rpx;
+  height: 140rpx;
+}
+.image_setting{
+  width:70rpx;
+  height: 70rpx;
+}

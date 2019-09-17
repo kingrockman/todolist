@@ -1,0 +1,12 @@
+<!-- pages/todolist/index.wxml -->
+
+<div class="nav">
+  <button class="prev" size="mini" type="default" catchtap="onTapToEdit">新增</button>
+</div>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="guide" catchtap="onTapToDetail" data-post-id="{{item._id}}">
+    <text class="headline">{{item.title}}</text>
+    <text class="p">{{item.beaign}}</text>
+    <text class="p">{{item.tel}}</text>
+  </view>
+</block>
