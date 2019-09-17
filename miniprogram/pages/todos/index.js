@@ -14,24 +14,6 @@ Page({
    */
   data: {
     todos: []
-    // todosArr: [{
-    //   title: "晨希",
-    //   contents: '添加共享打印机',
-    //   status: "处理中",
-    //   handler: "陈浩",
-    //   createDate: '2016-09-15',
-    //   detail: '',
-    //   creater: '黄洁'
-
-    // }, {
-    //   title: "晨希2",
-    //   contents: '添加共享打印机2',
-    //   status: "处理中2",
-    //   handler: "陈浩2",
-    //   createDate: '2016-09-15',
-    //   detail: '',
-    //   creater: '黄洁'
-    // }]
   },
   init() {
     todosPost.page = this;
@@ -88,7 +70,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(app.globalData);
   },
 
   /**

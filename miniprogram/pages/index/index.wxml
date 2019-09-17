@@ -63,6 +63,6 @@
 </view>
 
 <view class="userinfo">
-  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+  <button id="a" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">开始今天快乐的工作！</button>
 
 </view>

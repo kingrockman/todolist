@@ -3,14 +3,14 @@ const app = getApp()
 
 Page({
   data: {
-  
+
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
   },
-  toDelivery(){
+  toDelivery() {
     wx.redirectTo({
       url: '../todolist/delivery/index'
     })
@@ -22,7 +22,7 @@ Page({
       })
       return
     }
-
+    // console.log(this.logged);
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -30,9 +30,13 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
+              app.globalData.userInfo = res.userInfo;
+              // this.setData({
+              //   avatarUrl: res.userInfo.avatarUrl,
+              //   userInfo: res.userInfo
+              // })
+              wx.switchTab({
+                url: '../todos/index',
               })
             }
           })
@@ -42,6 +46,7 @@ Page({
   },
 
   onGetUserInfo: function(e) {
+    console.log(this.logged)
     if (!this.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
@@ -51,7 +56,28 @@ Page({
     }
   },
   onGotUserInfo(e) {
-    console.log(e.detail)
+    // wx.switchTab({
+    //   url: '../todos/index',
+    // })
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              app.globalData.userInfo = res.userInfo;
+              // this.setData({
+              //   avatarUrl: res.userInfo.avatarUrl,
+              //   userInfo: res.userInfo
+              // })
+              wx.switchTab({
+                url: '../todos/index',
+              })
+            }
+          })
+        }
+      }
+    })
   },
   onGetOpenid: function() {
     // // 调用云函数
@@ -72,24 +98,24 @@ Page({
     //     })
     //   }
     // })
-    
+
   },
 
   // 上传图片
-  doUpload: function () {
+  doUpload: function() {
     // 选择图片
     wx.chooseImage({
       count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
+      success: function(res) {
 
         wx.showLoading({
           title: '上传中',
         })
 
         const filePath = res.tempFilePaths[0]
-        
+
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
@@ -101,7 +127,7 @@ Page({
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
-            
+
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
