@@ -1,3 +1,4 @@
+var util = require('../util/util.js')
 class DBPost {
 
   /**

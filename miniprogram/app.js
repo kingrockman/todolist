@@ -1,3 +1,5 @@
+var util = require('util/util.js')
+
 import {
   DBPost
 } from 'db/DBPost.js';
@@ -18,8 +20,8 @@ App({
     this.globalData = {
       userInfo: {}
     };
-    init();
-
+    util.checkUserInfo(this.globalData);
+    // init();
   },
 
 });
@@ -32,7 +34,7 @@ function init() {
         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
         wx.getUserInfo({
           success: function(res) {
-            console.log(App.globalData)
+            console.log()
             
           }
         })
