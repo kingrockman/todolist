@@ -6,16 +6,13 @@
   <button catchtap="onTapToAdd">添加</button>
 </view>
 <view class="nav_wrap">
+  <!-- <scroll-view class="nav" scroll-x>
+    <view bindtap="activeNav" data-index="all" class="nav_items {{'all'==currentIndex?'active':''}}">未完成</view>
+  </scroll-view> -->
   <scroll-view class="nav" scroll-x>
-    <view class="nav_items">未完成</view>
-    <view class="nav_items">浩</view>
-    <view class="nav_items">峰</view>
-    <view class="nav_items">全部</view>
-    <view class="nav_items">全部</view>
-    <view class="nav_items">全部</view>
-    <view class="nav_items">全部</view>
-    <view class="nav_items">全部</view>
-    <view class="nav_items">全部</view>
+    <block wx:for="{{users}}" wx:key="index">
+      <view bindtap="activeNav" data-index="{{index}}" class="nav_items {{index==currentIndex?'active':''}}" id="{{item.userID}}">{{item.userName}}</view>
+    </block>
   </scroll-view>
 </view>
 <block wx:for="{{todos}}" wx:key="index">

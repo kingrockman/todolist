@@ -1,5 +1,7 @@
 /* pages/todolist/index.wxss */
 @import "../../style/guide.wxss";
 @import "todos_tpl/todos_tpl.wxss";
-
+.nav_items.active{
+  border-bottom: red 2px solid;
+}
 

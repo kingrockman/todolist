@@ -5,7 +5,7 @@ var config = {
   conn: 'todos',
   target: 'todos'
 }
-var todosPost = new DBPost(config.conn, '', config.target);
+var todosPost = new DBPost(config);
 let app = getApp();
 Page({
 
@@ -13,7 +13,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    todos: []
+    todos: [],
+    users: [],
+    currentIndex: 'all'
   },
   init() {
     todosPost.page = this;
@@ -66,11 +68,22 @@ Page({
       url: 'detail/detail?id=' + e.currentTarget.dataset.id,
     })
   },
+  activeNav(e) {
+    console.log(e.currentTarget.dataset.index)
+    this.setData({
+      currentIndex: e.currentTarget.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(app.globalData);
+    var s = wx.getStorageSync('users');
+    // wx.getStorageSync(key)
+    // console.log(s);
+    this.setData({
+      users: s
+    })
   },
 
   /**

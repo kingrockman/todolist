@@ -6,12 +6,12 @@ class DBPost {
    * @param {集合名称} conn 集合名称
    * @param {微信页面} that 微信页面
    */
-  constructor(conn, page, target) {
+  constructor(config) {
     this.wxcName = 'dbtools';
-    this.conn = conn;
-    this.page = page;
-    this.storageKeyName = conn;
-    this.target = target
+    this.conn = config.conn;
+    this.page = config.page;
+    this.storageKeyName = config.conn;
+    this.target = config.target
   };
 
   loading() {

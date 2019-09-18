@@ -1,8 +1,12 @@
 var util = require('util/util.js')
-
 import {
   DBPost
 } from 'db/DBPost.js';
+var config = {
+  conn: 'users',
+  target: 'users'
+}
+var usersPost = new DBPost(config)
 
 //app.js
 App({
@@ -16,7 +20,7 @@ App({
         traceUser: true,
       })
     }
-
+    usersPost.query({level:0},res=>{});
     this.globalData = {
       userInfo: {}
     };
