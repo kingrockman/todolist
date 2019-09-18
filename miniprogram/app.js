@@ -20,7 +20,7 @@ App({
         traceUser: true,
       })
     }
-    usersPost.query({level:0},res=>{});
+    usersPost.query({level:0},res=>{wx.hideLoading()});
     this.globalData = {
       userInfo: {}
     };

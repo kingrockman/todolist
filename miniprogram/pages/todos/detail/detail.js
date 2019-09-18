@@ -7,8 +7,9 @@ var config = {
   target: 'todos',
 }
 var todoPost = new DBPost(config.conn, '', config.target);
-function i(){
-  
+
+function i() {
+
 }
 Page({
 
@@ -17,7 +18,8 @@ Page({
    */
   data: {
     type: true,
-    todos: {}
+    todos: {},
+    isAccept: false
   },
   formSubmit(e) {
     // console.log(e.detail.value)
@@ -41,8 +43,12 @@ Page({
     this.toggle();
   },
   onAccept() {
-    console.log(this.data.type);
-
+    console.log(todoPost.app.globalData.nickName);
+    var user = todoPost.app.globalData.nickName
+    this.setData({
+      isAccept: !this.data.isAccept,
+      handler: this.data.isAccept ? '':user,
+    })
   },
   toggle() {
     var flag = this.data.type;
@@ -56,7 +62,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // console.log(options.id)
     this.init(options.id)
   },
 

@@ -6,10 +6,14 @@
 }
 
 .nav_items {
-  padding: 10rpx 40rpx;
+  padding: 10rpx 30rpx;
   font-size: 24rpx;
   display: inline-block;
 }
+.nav_items.active{
+  border-bottom: red 2px solid;
+}
+
 
 .container {
   width: 100%;

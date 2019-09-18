@@ -69,7 +69,7 @@ Page({
     })
   },
   activeNav(e) {
-    console.log(e.currentTarget.dataset.index)
+    // console.log(e.currentTarget.dataset.index)
     this.setData({
       currentIndex: e.currentTarget.dataset.index
     })

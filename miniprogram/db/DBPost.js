@@ -1,4 +1,5 @@
 var util = require('../util/util.js')
+
 class DBPost {
 
   /**
@@ -11,7 +12,9 @@ class DBPost {
     this.conn = config.conn;
     this.page = config.page;
     this.storageKeyName = config.conn;
-    this.target = config.target
+    this.target = config.target;
+    this.app=getApp();
+    // this.user = this.app;
   };
 
   loading() {
