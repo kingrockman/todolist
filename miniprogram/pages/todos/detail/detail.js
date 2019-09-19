@@ -6,7 +6,7 @@ var config = {
   conn: 'todos',
   target: 'todos',
 }
-var todoPost = new DBPost(config.conn, '', config.target);
+var todoPost = new DBPost(config);
 
 function i() {
 
@@ -18,8 +18,15 @@ Page({
    */
   data: {
     type: true,
-    todos: {},
-    isAccept: false
+    isAccept: false,
+    contents: '',
+    createDate: '',
+    creater: '',
+    customer: '',
+    detail: '',
+    handler: '',
+    status: '',
+    _id: ''
   },
   formSubmit(e) {
     // console.log(e.detail.value)
@@ -32,7 +39,14 @@ Page({
     var data = wx.getStorageSync('todos');
     // console.log(data[index]);
     this.setData({
-      todos: data[index]
+      contents: data[index].contents,
+      createDate: data[index].createDate,
+      creater: data[index].creater,
+      customer: data[index].customer,
+      detail: data[index].detail,
+      handler: data[index].handler,
+      status: data[index].status,
+      _id: data[index]._id
     })
   },
   myCB(res) {
@@ -47,7 +61,7 @@ Page({
     var user = todoPost.app.globalData.nickName
     this.setData({
       isAccept: !this.data.isAccept,
-      handler: this.data.isAccept ? '':user,
+      handler: this.data.isAccept ? '' : user,
     })
   },
   toggle() {
@@ -58,6 +72,18 @@ Page({
       type: !flag
     })
   },
+  statusChange(e) {
+    this.setData({
+      status: e.detail.value
+    })
+  },
+  handlerChange(e) {
+    console.log(todoPost.app.globalData.nickName);
+    this.setData({
+      handler: !this.data.handler ? todoPost.app.globalData.nickName : ''
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

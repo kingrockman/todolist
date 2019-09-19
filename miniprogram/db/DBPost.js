@@ -172,7 +172,7 @@ class DBPost {
       success: function(res) {
         // console.log("返回修改函数内容", res.result.data)
         myCB(res.result.data);
-        // that.execSetStorageSync(res.result.data);
+        that.execSetStorageSync(res.result.data);
         // that.query() 
         // console.log(data); 
         // wx.navigateTo({

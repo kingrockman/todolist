@@ -25,18 +25,6 @@
         "selectedIconPath": "image/login_HL.png"
       },
       {
-        "pagePath": "pages/delivery/index",
-        "text": "进度",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png"
-      },
-      {
-        "pagePath": "pages/userConsole/userConsole",
-        "text": "我",
-        "iconPath": "image/login.png",
-        "selectedIconPath": "image/login_HL.png"
-      },
-      {
         "pagePath": "pages/userConsole/userConsole",
         "text": "我",
         "iconPath": "image/login.png",

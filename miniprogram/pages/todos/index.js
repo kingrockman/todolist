@@ -39,10 +39,10 @@ Page({
     }
   },
   onTapToAdd() {
-    // wx.navigateTo({
-    //   url: 'add/add',
-    // })
-    this.checkUserInfo();
+    wx.navigateTo({
+      url: 'add/add',
+    })
+    // this.checkUserInfo();
   },
   onTapToRemove(e) {
     var that = this;

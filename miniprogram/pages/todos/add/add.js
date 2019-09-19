@@ -6,7 +6,7 @@ var config = {
   conn: 'todos',
   target: 'todos',
 }
-var todoPost = new DBPost(config.conn, '', config.target);
+var todoPost = new DBPost(config);
 
 Page({
 
@@ -19,7 +19,7 @@ Page({
   formSubmit(e) {
     var data = e.detail.value
     data.createDate=new Date();
-    data.status='未处理';
+    data.status=false;
     data.detail='';
     data.handler = '';
     data.creater='陈';
