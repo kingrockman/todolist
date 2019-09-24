@@ -1,4 +1,5 @@
 // pages/todos/detail/detail.js
+var util = require('../../../util/util.js')
 import {
   DBPost
 } from '../../../db/DBPost.js';
@@ -40,7 +41,7 @@ Page({
     // console.log(data[index]);
     this.setData({
       contents: data[index].contents,
-      createDate: data[index].createDate,
+      createDate: util.formatDate( data[index].createDate),
       creater: data[index].creater,
       customer: data[index].customer,
       detail: data[index].detail,

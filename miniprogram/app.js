@@ -24,7 +24,7 @@ App({
     this.globalData = {
       userInfo: {}
     };
-    util.checkUserInfo(this);
+    util.checkUserInfo();
     // init();
   },
 

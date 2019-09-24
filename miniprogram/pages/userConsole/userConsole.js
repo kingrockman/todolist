@@ -1,4 +1,5 @@
 // pages/userConsole/userConsole.js
+var util = require('../../util/util.js')
 let app = getApp();
 Page({
 
@@ -16,38 +17,31 @@ Page({
   },
   bindGetUserInfo(e) {
     console.log(e.detail.userInfo)
-    var userInfo = e.detail.userInfo
-    app.globalData.userInfo=userInfo
+    var userInfo = e.detail
+    // app.globalData.userInfo=userInfo
+    util.setStorageData('userInfo',userInfo)
     this.setData({
       userName: userInfo.nickName,
       userIcon: userInfo.avatarUrl,
       authorized: true
     })
   },
+  init(){
+    var userInfo = util.getStorageData('userInfo');
+    if(userInfo){
+      this.setData({
+        userName: userInfo.userInfo.nickName,
+        userIcon: userInfo.userInfo.avatarUrl,
+        authorized: true
+
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this;
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-              var userInfo = res.userInfo
-              app.globalData.userInfo = userInfo
-              that.setData({
-                userName: userInfo.nickName,
-                userIcon: userInfo.avatarUrl,
-                authorized: true
-              })
-            }
-          })
-        }
-      }
-    })
+    this.init();
   },
 
   /**

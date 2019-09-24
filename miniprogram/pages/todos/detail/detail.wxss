@@ -1,25 +1,57 @@
 /* pages/todos/detail/detail.wxss */
+page{
+  font-size: 24rpx;
+}
+input{
 
+  background-color: #ecf0f1;
+}
+button{
+  float: left;
+  font-size: 24rpx;
+  background-color: #2ecc71;
+  width: 20%;
+  margin: 50rpx 50rpx;
+  color: white;
+}
+/* 
 page {
   background-color: #f6f6f6;
+  padding: 20rpx;
 }
-
+text{
+  font-size: 24rpx;
+}
 .contents {
   font-size: 32rpx;
 }
 
+.content_items {
+  border: 1px red solid;
+  margin-bottom: 20rpx;
+}
+
+.header {
+  padding-bottom: 10rpx;
+  border-bottom: 1px black solid;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: gray;
+}
+
 .contents input {
-  border-radius: 10rpx;
   background-color: #fff;
   padding: 10rpx 20rpx;
-  margin-top: 20rpx;
+  margin: 0 10rpx;
+  margin-bottom: 10rpx;
+  border-bottom: 1px gray solid;
 }
 
 .contents textarea {
-  height: 400rpx;
-  border-radius: 10rpx;
+  height: 200rpx;
+  margin: 0 10rpx;
   padding: 10rpx 20rpx;
-  margin-top: 20rpx;
+  margin-bottom: 10rpx;
   background-color: #fff;
 }
 
@@ -30,5 +62,4 @@ button {
 
 .status {
   padding: 20rpx 20rpx;
-  
-}
+} */

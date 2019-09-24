@@ -1,3 +1,5 @@
+var util = require('../../util/util.js')
+
 import {
   DBPost
 } from '../../db/DBPost.js';
@@ -23,7 +25,13 @@ Page({
     todosPost.query('', this.myCB);
   },
   myCB(res) {
-    // console.log(res)
+    // var ds = Date.parse(res[0].createDate);
+  
+    // console.log(util.formatDate(res[0].createDate));
+    for(var i=0;i<res.length;i++){
+      res[i].createDate = util.formatDate(res[i].createDate)
+    }
+    console.log(res);
     this.setData({
       todos: res
     })
@@ -78,6 +86,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
     var s = wx.getStorageSync('users');
     // wx.getStorageSync(key)
     // console.log(s);
