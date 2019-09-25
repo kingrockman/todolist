@@ -1,8 +1,7 @@
 // let app =getApp();
 function formatDate(date) {
   var d = new Date(date);
-
-  return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+  return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
 }
 /*
  *根据客户端的时间信息得到发表评论的时间格式

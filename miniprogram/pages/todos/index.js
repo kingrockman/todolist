@@ -17,7 +17,9 @@ Page({
   data: {
     todos: [],
     users: [],
-    currentIndex: 'all'
+    currentIndex: 'all',
+    owner: '1',
+    status: false,
   },
   init() {
     todosPost.page = this;
@@ -26,9 +28,9 @@ Page({
   },
   myCB(res) {
     // var ds = Date.parse(res[0].createDate);
-  
+
     // console.log(util.formatDate(res[0].createDate));
-    for(var i=0;i<res.length;i++){
+    for (var i = 0; i < res.length; i++) {
       res[i].createDate = util.formatDate(res[i].createDate)
     }
     console.log(res);
@@ -81,6 +83,23 @@ Page({
     this.setData({
       currentIndex: e.currentTarget.dataset.index
     })
+  },
+  activeStatus(e) {
+    e = e.currentTarget.dataset.index
+    console.log(e);
+    if (e == undefined) {
+      this.setData({
+        status: false
+      })
+    } else {
+      this.setData({
+        status: true
+      })
+      var flag = e == 'done' ? false : true;
+      this.setData({
+        status: flag,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

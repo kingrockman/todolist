@@ -1,14 +1,15 @@
 <!-- pages/todolist/index.wxml -->
 
 <import src="todos_tpl/todos_tpl.wxml" />
-
 <view>
   <button catchtap="onTapToAdd">添加</button>
 </view>
 <view class="nav_wrap">
-  <!-- <scroll-view class="nav" scroll-x>
-    <view bindtap="activeNav" data-index="all" class="nav_items {{'all'==currentIndex?'active':''}}">未完成</view>
-  </scroll-view> -->
+  <scroll-view class="nav" scroll-x>
+    <view bindtap="activeStatus"  class="nav_items}}">全部</view>
+    <view bindtap="activeStatus" data-index="done" class="nav_items}}">已完成</view>
+    <view bindtap="activeStatus" data-index="disdone" class="nav_items}}">未完成</view>
+  </scroll-view>
   <scroll-view class="nav" scroll-x>
     <block wx:for="{{users}}" wx:key="index">
       <view bindtap="activeNav" data-index="{{index}}" class="nav_items {{index==currentIndex?'active':''}}" id="{{item.userID}}">{{item.userName}}</view>
@@ -16,7 +17,7 @@
   </scroll-view>
 </view>
 <block wx:for="{{todos}}" wx:key="index">
-  <view catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}">
+  <view catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}" hidden="{{!status?status:item.status==status}}">
     <template is="msgItem" data="{{...item}}" />
   </view>
 </block>

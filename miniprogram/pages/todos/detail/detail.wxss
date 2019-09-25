@@ -1,12 +1,20 @@
 /* pages/todos/detail/detail.wxss */
-page{
-  font-size: 24rpx;
-}
-input{
 
-  background-color: #ecf0f1;
+page {
+  font-size: 32rpx;
 }
-button{
+
+input {
+  background-color: #ecf0f1;
+  padding: 20rpx;
+}
+
+textarea {
+  background-color: #ecf0f1;
+  padding: 20rpx;
+}
+
+button {
   float: left;
   font-size: 24rpx;
   background-color: #2ecc71;
@@ -14,6 +22,7 @@ button{
   margin: 50rpx 50rpx;
   color: white;
 }
+
 /* 
 page {
   background-color: #f6f6f6;
