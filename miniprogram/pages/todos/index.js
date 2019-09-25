@@ -19,21 +19,15 @@ Page({
     users: [],
     currentIndex: 'all',
     owner: '1',
-    status: false,
+    status: 0,
   },
   init() {
-    todosPost.page = this;
-    // console.log(todosPost);
     todosPost.query('', this.myCB);
   },
   myCB(res) {
-    // var ds = Date.parse(res[0].createDate);
-
-    // console.log(util.formatDate(res[0].createDate));
     for (var i = 0; i < res.length; i++) {
       res[i].createDate = util.formatDate(res[i].createDate)
     }
-    console.log(res);
     this.setData({
       todos: res
     })
@@ -79,25 +73,28 @@ Page({
     })
   },
   activeNav(e) {
-    // console.log(e.currentTarget.dataset.index)
+    var index = e.currentTarget.dataset.index;
+    console.log(this.data.users[index].userName)
     this.setData({
-      currentIndex: e.currentTarget.dataset.index
+      currentIndex: index,
+      userName: this.data.users[index].userName
     })
   },
   activeStatus(e) {
     e = e.currentTarget.dataset.index
-    console.log(e);
+
     if (e == undefined) {
       this.setData({
-        status: false
+        status: 0,
       })
-    } else {
+    } else if (e == 'done') {
       this.setData({
-        status: true
+        status: 1,
       })
-      var flag = e == 'done' ? false : true;
+
+    } else if (e == 'disdone') {
       this.setData({
-        status: flag,
+        status: 2,
       })
     }
   },
@@ -105,6 +102,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    todosPost.page = this;
 
     var s = wx.getStorageSync('users');
     // wx.getStorageSync(key)

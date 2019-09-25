@@ -6,9 +6,9 @@
 </view>
 <view class="nav_wrap">
   <scroll-view class="nav" scroll-x>
-    <view bindtap="activeStatus"  class="nav_items}}">全部</view>
-    <view bindtap="activeStatus" data-index="done" class="nav_items}}">已完成</view>
-    <view bindtap="activeStatus" data-index="disdone" class="nav_items}}">未完成</view>
+    <view bindtap="activeStatus" class="nav_items {{0==status?'active':''}}}}">全部</view>
+    <view bindtap="activeStatus" data-index="done" class="nav_items {{1==status?'active':''}}}}">已完成</view>
+    <view bindtap="activeStatus" data-index="disdone" class="nav_items {{2==status?'active':''}}}}">未完成</view>
   </scroll-view>
   <scroll-view class="nav" scroll-x>
     <block wx:for="{{users}}" wx:key="index">
@@ -17,7 +17,9 @@
   </scroll-view>
 </view>
 <block wx:for="{{todos}}" wx:key="index">
-  <view catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}" hidden="{{!status?status:item.status==status}}">
+  <view>{{index}}:{{(status==(item.status?2:1))||!(item.handler==userName)}}</view>
+
+  <view catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}" hidden="{{(status==(item.status?2:1))}}">
     <template is="msgItem" data="{{...item}}" />
   </view>
 </block>
