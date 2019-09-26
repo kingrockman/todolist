@@ -1,4 +1,3 @@
-// let app =getApp();
 function formatDate(date) {
   var d = new Date(date);
   return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
@@ -83,7 +82,7 @@ function getStorageData(key) {
 }
 
 function setStorageData(key, value) {
-  return wx.setStorageSync(key, value)
+   wx.setStorageSync(key, value)
 }
 
 module.exports = {

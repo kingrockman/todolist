@@ -1,5 +1,5 @@
 /* pages/todos/add/add.wxss */
+@import "../../../style/guide.wxss";
+/* @import "todos_tpl/todos_tpl.wxss"; */
 
-input {
-  margin: 10rpx;
-}
+

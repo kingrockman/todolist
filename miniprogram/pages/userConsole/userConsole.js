@@ -8,7 +8,7 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    userName: '受权登陆',
+    userName: '授权登陆',
     userIcon: '../../image/login.png',
     authorized: false
   },
@@ -25,6 +25,7 @@ Page({
       userIcon: userInfo.avatarUrl,
       authorized: true
     })
+    this.init();    
   },
   init(){
     var userInfo = util.getStorageData('userInfo');

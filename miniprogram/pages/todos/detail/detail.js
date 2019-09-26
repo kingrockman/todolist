@@ -32,7 +32,10 @@ Page({
   formSubmit(e) {
     // console.log(e.detail.value)
     // console.log(todoPost)
-    todoPost.update(e.detail.value, this.myCB)
+    var data = e.detail.value
+    data.createDate = Date(data.createDate);
+    // console.log(data.createDate);
+    todoPost.update(data, this.myCB)
 
   },
   init(index) {

@@ -1,26 +1,35 @@
 /* pages/todos/detail/detail.wxss */
+@import "../../../style/guide.wxss";
 
 page {
   font-size: 32rpx;
+  /* background: #f6f6f6; */
 }
 
 input {
-  background-color: #ecf0f1;
+  background-color: #fff;
   padding: 20rpx;
 }
 
 textarea {
-  background-color: #ecf0f1;
+  background-color: #fff;
   padding: 20rpx;
 }
 
+.tools {
+  position: fixed;
+  bottom: -10px;
+  right: 05px;
+}
+
 button {
+  /* position:  static; */
   float: left;
-  font-size: 24rpx;
+  margin: 50rpx 50rpx;
+  /* font-size: 24rpx;
   background-color: #2ecc71;
   width: 20%;
-  margin: 50rpx 50rpx;
-  color: white;
+  color: white; */
 }
 
 /* 

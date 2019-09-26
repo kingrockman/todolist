@@ -19,7 +19,7 @@ Page({
     users: [],
     currentIndex: 'all',
     owner: '1',
-    status: 0,
+    status: 2,
   },
   init() {
     todosPost.query('', this.myCB);
@@ -49,25 +49,24 @@ Page({
     // this.checkUserInfo();
   },
   onTapToRemove(e) {
-    var that = this;
-    console.log(e.currentTarget.dataset.wxId)
-    var _id = e.currentTarget.dataset.wxId
-    wx.showModal({
-      title: '提示',
-      content: '是否删除当前记录',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          todosPost.remove(_id, '')
-          todosPost.query('', that.myCB);
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
+    // var that = this;
+    // console.log(e.currentTarget.dataset.wxId)
+    // var _id = e.currentTarget.dataset.wxId
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '是否删除当前记录',
+    //   success(res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //       todosPost.remove(_id, '')
+    //       todosPost.query('', that.myCB);
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
   },
   onTapToDetail(e) {
-    console.log(e.currentTarget.dataset)
     wx.navigateTo({
       url: 'detail/detail?id=' + e.currentTarget.dataset.id,
     })
@@ -82,7 +81,6 @@ Page({
   },
   activeStatus(e) {
     e = e.currentTarget.dataset.index
-
     if (e == undefined) {
       this.setData({
         status: 0,

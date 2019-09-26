@@ -1,4 +1,6 @@
 // pages/todos/add/add.js
+var util = require('../../../util/util.js')
+
 import {
   DBPost
 } from '../../../db/DBPost.js';
@@ -6,7 +8,7 @@ var config = {
   conn: 'todos',
   target: 'todos',
 }
-var todoPost = new DBPost(config);
+var addPost = new DBPost(config);
 
 Page({
 
@@ -18,23 +20,28 @@ Page({
   },
   formSubmit(e) {
     var data = e.detail.value
-    data.createDate=new Date();
-    data.status=false;
-    data.detail='';
+    var userInfo = util.getStorageData('userInfo').userInfo.nickName;
+    data.createDate = new Date();
+    data.status = false;
+    data.detail = '';
     data.handler = '';
-    data.creater='陈';
-
-    todoPost.insert(data, this.myCB);
+    data.creater = userInfo;
+    // console.log(data);
+    addPost.insert(data, this.myCB);
   },
   myCB() {
     wx.navigateBack({})
     wx.hideLoading();
   },
+  init() {
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    todoPost.page = this;
+    addPost.page = this;
+    this.init();
   },
 
   /**

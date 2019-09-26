@@ -57,7 +57,7 @@ function insert(data) {
 function remove(data) {
   try {
     db.collection(conn).doc(data).remove()
-    return db.collection(conn).where().get()
+    return db.collection(conn).where().orderBy('createDate', 'asc').get()
   } catch (e) {
     console.log("删除操作出错");
   }

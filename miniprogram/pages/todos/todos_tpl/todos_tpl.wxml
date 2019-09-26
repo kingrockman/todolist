@@ -1,6 +1,6 @@
 <!--pages/todos/todos_tpl/todos_tpl.wxml-->
 <template name="msgItem">  
-  <view class="list">
+  <view class="">
     <view class="title">
       <text>{{customer}}</text>
     </view>
@@ -8,7 +8,7 @@
       <text>{{contents}}</text>
     </view>
     <view class="info">
-      <text class="handler">{{status?'已完成':"未完成"}}</text>
+      <text class="handler">{{status?'已完成':(handler!=''?handler+'处理中':'未处理')}}</text>
       <text class="date">{{createDate}}</text>
     </view>
   </view>
