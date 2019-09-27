@@ -3,6 +3,7 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  /* width: 100%; */
 }
 
 .list {
@@ -12,31 +13,45 @@ page {
   border-top: rgba(0, 0, 0, 0.1) solid 1rpx;
   border-bottom: rgba(0, 0, 0, 0.1) solid 1rpx;
 }
+.header{
+font-size: 24rpx;
+}
+.line{
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx  rgba(0, 0, 0, 0.5) solid;
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
 
 .guide {
   margin: 20rpx;
 }
 
 input {
-  border: red solid 1rpx;
+  /* border: rgba(0, 0, 200, 0.5) solid 1rpx; */
+  border-radius: 5rpx;
   background: #fff;
   padding: 20rpx;
   margin: 10rpx 0;
 }
 
 textarea {
-  border: red solid 1rpx;
+  /* border: rgba(0, 0,200, 0.5) solid 1rpx; */
+  border-radius: 5rpx;
   background: #fff;
   padding: 20rpx;
   margin: 10rpx 0;
-  /* margin: 10rpx; */
-  width: 668rpx;
-  height: 100rpx;
+  position: relative;
+  width: 94%;
+  height: 50rpx;
 }
-button{
+
+button {
   width: 120rpx;
   height: 60rpx;
-  background:#2ecc71; 
+  background: #2ecc71;
   font-size: 24rpx;
   color: white;
 }

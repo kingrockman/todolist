@@ -6,6 +6,10 @@ page {
   /* background: #f6f6f6; */
 }
 
+/* .content {
+  width: 100%;
+} */
+
 input {
   background-color: #fff;
   padding: 20rpx;
@@ -14,6 +18,10 @@ input {
 textarea {
   background-color: #fff;
   padding: 20rpx;
+}
+
+.detail {
+  height: 200rpx;
 }
 
 .tools {

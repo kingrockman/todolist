@@ -1,5 +1,5 @@
 /**app.wxss**/
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,4 +16,4 @@ button:focus{
 
 button::after{
   border: none;
-}
+} */

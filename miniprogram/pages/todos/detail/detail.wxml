@@ -1,36 +1,42 @@
 <!--pages/todos/detail/detail.wxml-->
-<form class="container" bindsubmit="formSubmit" hidden="true">
-  <view class="contents">
-    <view class="content_items">
-
-      <view class="header">工作详情：</view>
-      <input name="_id" hidden="true" value="{{_id}}"></input>
-      <text>客户名称:</text>
-      <input name="customer" disabled="{{type}}" value="{{customer}}" placeholder="客户名称"></input>
-      <text>问题描述：</text>
-      <textarea name="contents" disabled="{{type}}" value="{{contents}}" placeholder="问题描述"></textarea>
-      <view class="header">工作步骤：</view>
-      <textarea  name="detail" disabled="{{type}}" value="{{detail}}" placeholder="工作内容"></textarea>
-    </view>
-    <view class="content_items">
-      <view class="header">基本信息：</view>
-      <text>登记人：</text>
-      <input name="creater" disabled="true" value="{{creater}}" placeholder="创建人"></input>
-      <text>登记日期：</text>
-      <input name="createDate" disabled="true" value="{{createDate}}" placeholder="创建日期"></input>
-      <text>派工情况：</text>
-      <input name="handler" disabled="{{type}}" value="{{handler}}" placeholder="派工情况："></input>
-      <text>状态：</text>
-      <view class="status">
-        {{status?'已完成':'未完成'}}
-        <switch hidden="{{type}}" name='status' checked='{{status}}' bindchange="statusChange" />
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="contents">
+      <view class="content_items">
+        <view class="header line">工作详情</view>
+        <input name="_id" hidden="true" value="{{_id}}"></input>
+        <text>客户名称:</text>
+        <input name="customer" disabled="{{type}}" value="{{customer}}" placeholder="客户名称"></input>
+        <text>问题描述：</text>
+        <textarea name="contents" disabled="{{type}}" value="{{contents}}" placeholder="问题描述"></textarea>
+        <view class="header line">工作步骤</view>
+        <textarea class="detail" name="detail" disabled="{{type}}" value="{{detail}}" placeholder="工作内容"></textarea>
+      </view>
+      <view class="content_items">
+        <view class="header line">基本信息</view>
+        <text>登记人：</text>
+        <input name="creater" disabled="true" value="{{creater}}" placeholder="创建人"></input>
+        <text>登记日期：</text>
+        <input name="createDate" disabled="true" value="{{createDate}}" placeholder="创建日期"></input>
+        <!-- <text>派工情况：</text> -->
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <input name="handler" hidden="true" value="{{array[index]}}" placeholder="派工情况："></input>
+          <view class="picker">
+            派工情况：{{array[index]}}
+          </view>
+        </picker>
+        <text>状态：</text>
+        <view class="status">
+          {{status?'已完成':'未完成'}}
+          <switch hidden="{{type}}" name='status' checked='{{status}}' bindchange="statusChange" />
+        </view>
       </view>
     </view>
-  </view>
 
-  <view class="tools">
-    <button hidden="{{!type}}" catchtap="toggle">修改</button>
-    <button hidden="{{type}}" form-type="submit">保存</button>
-    <button hidden="{{type}}" catchtap="toggle">取消</button>
-  </view>
-</form>
+    <view class="tools">
+      <button hidden="{{!type}}" catchtap="toggle">修改</button>
+      <button hidden="{{type}}" form-type="submit">保存</button>
+      <button hidden="{{type}}" catchtap="toggle">取消</button>
+    </view>
+  </form>
+</view>

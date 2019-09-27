@@ -27,21 +27,17 @@ Page({
     detail: '',
     handler: '',
     status: '',
-    _id: ''
+    _id: '',
+    array: util.getStorageData('users'),
   },
   formSubmit(e) {
-    // console.log(e.detail.value)
-    // console.log(todoPost)
     var data = e.detail.value
     data.createDate = Date(data.createDate);
-    // console.log(data.createDate);
     todoPost.update(data, this.myCB)
-
   },
   init(index) {
     todoPost.page = this;
     var data = wx.getStorageSync('todos');
-    // console.log(data[index]);
     this.setData({
       contents: data[index].contents,
       createDate: util.formatDate( data[index].createDate),
@@ -54,7 +50,6 @@ Page({
     })
   },
   myCB(res) {
-    // console.log('回调成功！', res[this.options.id])
     wx.showToast({
       title: '修改成功！',
     })
@@ -87,12 +82,27 @@ Page({
       handler: !this.data.handler ? todoPost.app.globalData.nickName : ''
     })
   },
-
+  bindPickerChange(e){
+    this.setData({
+      index:e.detail.value
+    })
+    console.log(e)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     this.init(options.id)
+    var users=util.getStorageData('users')
+    var arr=['未派工']
+    for(var i =0;i<users.length;i++){
+      arr.push(users[i].userName)
+    }
+    this.setData({
+      array:arr,
+      index:0,
+    })
+
   },
 
   /**
