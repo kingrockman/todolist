@@ -1,8 +1,31 @@
 /* pages/todolist/index.wxss */
 @import "../../style/guide.wxss";
 @import "todos_tpl/todos_tpl.wxss";
-.addbtn{
+
+.addbtn {
   position: fixed;
   bottom: 5px;
   right: 5px;
+}
+
+.nav_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f6f6f6;
+  width: 100%;
+}
+.footer{
+  margin-top: 30rpx;
+  text-align: center;
+}
+.offsetF {
+  /* border: red 1px solid; */
+
+  height: 100rpx;
+}
+
+.offsetH {
+  /* border: red 1px solid; */
+  height: 60rpx;
 }

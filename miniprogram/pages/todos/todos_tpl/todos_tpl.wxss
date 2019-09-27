@@ -13,8 +13,12 @@
 .nav_items.active{
   border-bottom: red 2px solid;
 }
-
-
+.handler{
+  color: red;
+}
+.handler.active{
+  color: blue;
+}
 .container {
   width: 100%;
 }

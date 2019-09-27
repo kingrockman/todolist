@@ -16,8 +16,11 @@
     </block>
   </scroll-view> -->
 </view>
+<view class="offsetH"></view>
 <block wx:for="{{todos}}" wx:key="index">
   <view class="list" catchtap="onTapToDetail" catchlongpress="onTapToRemove" data-id="{{index}}" data-wx-id="{{item._id}}" hidden="{{(status==(item.status?2:1))}}">
     <template is="msgItem" data="{{...item}}" />
   </view>
 </block>
+<view class="footer">我也是有底线的</view>
+<view class="offsetF"></view>

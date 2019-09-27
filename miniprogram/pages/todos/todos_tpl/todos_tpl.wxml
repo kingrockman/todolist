@@ -8,7 +8,7 @@
       <text>{{contents}}</text>
     </view>
     <view class="info">
-      <text class="handler">{{status?'已完成':(handler!=''?handler+'处理中':'未处理')}}</text>
+      <text class="handler {{status?'active':''}}">{{status?'已完成':(handler!=''?handler+'处理中':'未处理')}}</text>
       <text class="date">{{createDate}}</text>
     </view>
   </view>

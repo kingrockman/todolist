@@ -31,6 +31,7 @@ textarea {
   margin: 10rpx 0;
   /* margin: 10rpx; */
   width: 668rpx;
+  height: 100rpx;
 }
 button{
   width: 120rpx;
