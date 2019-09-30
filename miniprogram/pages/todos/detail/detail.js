@@ -32,16 +32,16 @@ Page({
   },
   formSubmit(e) {
     var data = e.detail.value
-    data.createDate = Date(data.createDate);
+    data.createDate =   Date(data.createDate);
     todoPost.update(data, this.myCB)
-    // console.log(data);
+    console.log(data);
   },
   init(index) {
     todoPost.page = this;
     var data = wx.getStorageSync('todos');
     this.setData({
       contents: data[index].contents,
-      createDate: util.formatDate( data[index].createDate),
+      createDate: util.formatDate(data[index].createDate),
       creater: data[index].creater,
       customer: data[index].customer,
       detail: data[index].detail,

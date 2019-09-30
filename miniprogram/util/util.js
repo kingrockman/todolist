@@ -1,10 +1,14 @@
 function formatDate(date) {
   var d = new Date(date);
-  return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
+  return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
 }
-function test(o){
-  o =Date(o);
-  console.log(o.getTime())
+
+function test(o) {
+  o = new Date(o);
+  // console.log(o.getTime())
+  console.log(o.getFullYear())
+  console.log(o.getMonth())
+  console.log(o.getDate())
 }
 /*
  *根据客户端的时间信息得到发表评论的时间格式
@@ -95,5 +99,5 @@ module.exports = {
   setStorageData: setStorageData,
   getDiffTime: getDiffTime,
   formatDate: formatDate,
-  test:test,
+  test: test,
 }

@@ -23,7 +23,12 @@ Page({
     footinfo: '',
   },
   init() {
+    todosPost.page = this;
     todosPost.query('', this.myCB);
+    var s = wx.getStorageSync('users');
+    this.setData({
+      users: s
+    })
   },
   myCB(res) {
     for (var i = 0; i < res.length; i++) {
@@ -101,14 +106,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    todosPost.page = this;
-    // util.test('2017年2月3日')
-    var s = wx.getStorageSync('users');
-    // wx.getStorageSync(key)
-    // console.log(s);
-    this.setData({
-      users: s
-    })
+    this.init();
   },
 
   /**
