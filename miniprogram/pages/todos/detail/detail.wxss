@@ -26,8 +26,8 @@ textarea {
 
 .tools {
   position: fixed;
-  top: -20px;
-  right: 05px;
+  bottom: -10px;
+  right: 0px;
 }
 
 button {

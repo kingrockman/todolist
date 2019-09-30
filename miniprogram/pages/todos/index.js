@@ -20,6 +20,7 @@ Page({
     currentIndex: 'all',
     owner: '1',
     status: 2,
+    footinfo: '',
   },
   init() {
     todosPost.query('', this.myCB);
@@ -29,7 +30,8 @@ Page({
       res[i].createDate = util.formatDate(res[i].createDate)
     }
     this.setData({
-      todos: res
+      todos: res,
+      footinfo: '我也是有底线的',
     })
     wx.hideLoading();
   },
@@ -39,7 +41,6 @@ Page({
 
     } else {
       console.log("请进行用户受权！");
-
     }
   },
   onTapToAdd() {
@@ -101,7 +102,7 @@ Page({
    */
   onLoad: function(options) {
     todosPost.page = this;
-
+    // util.test('2017年2月3日')
     var s = wx.getStorageSync('users');
     // wx.getStorageSync(key)
     // console.log(s);

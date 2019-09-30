@@ -12,9 +12,8 @@ class DBPost {
     this.conn = config.conn;
     this.page = config.page;
     this.storageKeyName = config.conn;
-    this.target = config.target;
+    this.target = config.conn;
     this.app = getApp();
-    // this.user = this.app;
   };
 
   loading() {

@@ -22,5 +22,5 @@
     <template is="msgItem" data="{{...item}}" />
   </view>
 </block>
-<view class="footer">我也是有底线的</view>
+<view class="footer">{{footinfo}}</view>
 <view class="offsetF"></view>

@@ -2,6 +2,10 @@ function formatDate(date) {
   var d = new Date(date);
   return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
 }
+function test(o){
+  o =Date(o);
+  console.log(o.getTime())
+}
 /*
  *根据客户端的时间信息得到发表评论的时间格式
  *多少分钟前，多少小时前，然后是昨天，然后再是月日
@@ -82,7 +86,7 @@ function getStorageData(key) {
 }
 
 function setStorageData(key, value) {
-   wx.setStorageSync(key, value)
+  wx.setStorageSync(key, value)
 }
 
 module.exports = {
@@ -91,4 +95,5 @@ module.exports = {
   setStorageData: setStorageData,
   getDiffTime: getDiffTime,
   formatDate: formatDate,
+  test:test,
 }

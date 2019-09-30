@@ -1,5 +1,8 @@
 /* pages/todos/add/add.wxss */
 @import "../../../style/guide.wxss";
 /* @import "todos_tpl/todos_tpl.wxss"; */
+textarea{
+  height: 600rpx;
+}
 
 

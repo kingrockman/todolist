@@ -20,9 +20,9 @@
         <input name="createDate" disabled="true" value="{{createDate}}" placeholder="创建日期"></input>
         <!-- <text>派工情况：</text> -->
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <input name="handler" hidden="true" value="{{array[index]}}" placeholder="派工情况："></input>
+          <input name="handler" hidden="true" value="{{handler}}" placeholder="派工情况："></input>
           <view class="picker">
-            派工情况：{{array[index]}}
+            派工情况：{{handler}}
           </view>
         </picker>
         <text>状态：</text>

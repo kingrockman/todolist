@@ -34,6 +34,7 @@ Page({
     var data = e.detail.value
     data.createDate = Date(data.createDate);
     todoPost.update(data, this.myCB)
+    // console.log(data);
   },
   init(index) {
     todoPost.page = this;
@@ -84,9 +85,9 @@ Page({
   },
   bindPickerChange(e){
     this.setData({
-      index:e.detail.value
+      handler: this.data.array[e.detail.value]
     })
-    console.log(e)
+    console.log(this.data.array[e.detail.value])
   },
   /**
    * 生命周期函数--监听页面加载
