@@ -17,7 +17,12 @@
         <text>登记人：</text>
         <input name="creater" disabled="true" value="{{creater}}" placeholder="创建人"></input>
         <text>登记日期：</text>
-        <input name="createDate" disabled="true" value="{{createDate}}" placeholder="创建日期"></input>
+        <!-- <input name="createDate" disabled="true" value="{{createDate}}" placeholder="创建日期"></input> -->
+        <picker mode="date" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            {{createDate}}
+
+        </picker>
+
         <!-- <text>派工情况：</text> -->
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
           <input name="handler" hidden="true" value="{{handler}}" placeholder="派工情况："></input>

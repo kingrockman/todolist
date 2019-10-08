@@ -2,7 +2,9 @@ function formatDate(date) {
   var d = new Date(date);
   return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
 }
+function encodeDate(date){
 
+}
 function test(o) {
   o = new Date(o);
   // console.log(o.getTime())
@@ -100,4 +102,5 @@ module.exports = {
   getDiffTime: getDiffTime,
   formatDate: formatDate,
   test: test,
+  encodeDate,
 }

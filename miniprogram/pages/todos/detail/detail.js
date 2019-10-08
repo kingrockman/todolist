@@ -32,8 +32,9 @@ Page({
   },
   formSubmit(e) {
     var data = e.detail.value
-    data.createDate =   Date(data.createDate);
-    todoPost.update(data, this.myCB)
+    // data.createDate =   Date(data.createDate);
+    
+    // todoPost.update(data, this.myCB)
     console.log(data);
   },
   init(index) {

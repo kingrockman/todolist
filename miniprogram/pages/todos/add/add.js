@@ -21,12 +21,16 @@ Page({
   formSubmit(e) {
     var data = e.detail.value
     var userInfo = util.getStorageData('userInfo').userInfo.nickName;
-    data.createDate = new Date();
+    var createDate = new Date();
+    createDate = createDate.getTime();
+    data.createDate = createDate
     data.status = false;
     data.detail = '';
     data.handler = '';
     data.creater = userInfo;
-    // console.log(data);
+    console.log(data);
+
+
     addPost.insert(data, this.myCB);
   },
   myCB() {
